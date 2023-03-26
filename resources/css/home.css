@@ -1,5 +1,10 @@
-.start{
+.jumbotron{
     display: grid;
     place-items:center;
     margin: 20px;
+}
+
+a{
+    width: max-content;
+    margin-bottom: .5rem;
 }

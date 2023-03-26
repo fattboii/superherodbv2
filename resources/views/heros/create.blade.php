@@ -9,40 +9,27 @@
     <!-- <link href="../resources/css/title.css" rel="stylesheet" type="text/css"/> -->
     <title>Create</title>
 </head>
-<body>
-@extends('layouts.app')
+    <body>
+        @extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <!-- Greeting -->
-    <div class="greeting">
-        <h2>Upload A Hero To The DataBase</h2>
-    </div>
-    <!-- form -->
-        <form action="{{ url('/heros') }}" method="post" enctype="multipart/form-data">
-            <!-- security key -->
-            @csrf
-            <!-- user inputs -->
-            @include('heros.form')
-        </form>    
-        <!-- returns to the home page -->
-        <div style="
+        @section('content')
+        <div class="container">
+            <!-- Greeting -->
+            <div class="jumbotron"
+            style = "
             display: grid;
-            place-items: center;
-        ">
-        <button class ="return_btn"
-        style="
-        margin-top: 10px;
-        width: 120px;
-        height: 50px;
-        "
-        ><a href="{{ url('heros') }}" 
-        style="
-        text-decoration: none;
-        color: black;
-        ">Return</a></button>
+            place-items:center;
+            margin: 20px;">
+                <h1 class="display-4">Upload A Hero To The DataBase</h1>
+            </div>
+            <!-- form -->
+            <form action="{{ url('/heros') }}" method="post" enctype="multipart/form-data">
+                <!-- security key -->
+                @csrf
+                <!-- user inputs -->
+                @include('heros.form')
+            </form>    
         </div>
-    </div>
-    @endsection
-</body>
+        @endsection
+    </body>
 </html>
